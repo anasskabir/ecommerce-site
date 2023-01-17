@@ -21,8 +21,6 @@ const Highlights = () => {
                                 Get Acces to the book you purchased online instantly.
                             </p>
                         </div>
-                    </div>
-                    <div className="highlight__wrapper">
                         <div className="highlight">
                             <div className="highlight__img">
                                 <FontAwesomeIcon icon="book-open"></FontAwesomeIcon>
@@ -32,8 +30,6 @@ const Highlights = () => {
                                 Library has books in all your favorite categories
                             </p>
                         </div>
-                    </div>
-                    <div className="highlight__wrapper">
                         <div className="highlight">
                             <div className="highlight__img">
                                 <FontAwesomeIcon icon="tags"></FontAwesomeIcon>
