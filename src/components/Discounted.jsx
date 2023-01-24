@@ -17,7 +17,7 @@ export default function Discounted() {
               .filter((book) => book.salePrice > 0)
               .slice(0,8)
               .map((book) => (
-                <Book book={book} ley={book.id} />
+                <Book book={book} key={book.id} />
               ))}
           </div>
         </div>

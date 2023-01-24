@@ -1,5 +1,7 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import Rating from "./Rating";
+import Price from "./Price";
 
 export default function Book({ book }) {
     
@@ -7,35 +9,18 @@ export default function Book({ book }) {
 
     return (
     <div className="book">
-      <a href="">
+      <a href={`./books/${book.id}`}>
         <figure>
           <img src={book.url} alt="" className="book__img" />
         </figure>
       </a>
       <div className="book__title">
-        <a href="" className="book__title--link">
+        <a href={`./books/${book.id}`} className="book__title--link">
           {book.title}
         </a>
       </div>
-      <div className="book__ratings">
-        {
-            new Array(Math.floor(book.rating)).fill(0).map((_, index) => <FontAwesomeIcon icon="star" key={index} /> )
-        }
-        {
-            !Number.isInteger(book.rating) && <FontAwesomeIcon icon="star-half-alt"/>
-
-        }
-      </div>
-      <div className="book_price">
-        {book.salePrice ? (
-          <>
-            <span className="book__price--normal">${book.originalPrice.toFixed(2)}</span>$
-            {book.salePrice.toFixed(2)}
-          </>
-        ) : (
-          `$${book.originalPrice.toFixed(2)}`
-        )}
-      </div>
+      <Rating rating={book.rating}></Rating>
+      <Price salePrice={book.salePrice} originalPrice={book.originalPrice}></Price>
     </div>
   );
 }
